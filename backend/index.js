@@ -25,7 +25,6 @@ const io = new Server(server, { // Initialize Socket.IO server
 const PORT = process.env.PORT || 5002;
 
 app.use(cors());
-app.use(express.json());
 
 // Sync database and create tables
 sequelize.sync({ alter: true }).then(() => {
@@ -35,11 +34,12 @@ sequelize.sync({ alter: true }).then(() => {
   console.log('Server will start without database connection');
 });
 
-app.use('/api/auth', authRoutes);
+// Only use express.json() for routes that expect JSON, not file uploads
+app.use('/api/auth', express.json(), authRoutes);
+app.use('/api/reviews', express.json(), reviewRoutes);
 
+// Do NOT use express.json() for booking routes (uses multer)
 app.use('/api/booking', bookingRoutes);
-
-app.use('/api/reviews', reviewRoutes);
 
 // Socket.IO connection handling
 io.on('connection', async (socket) => {

@@ -8,8 +8,8 @@ const coreValues = [
 ];
 
 const founders = [
-  { name: 'Abhay Revankar', role: 'CEO', img: '/founder1.jpg', linkedin: '#' },
-  { name: 'Drosten Fernandes', role: 'CF', img: '/founder2.jpg', linkedin: '#' },
+  { name: 'Abhay Revankar', role: 'Proprietor', img: '/founder1.jpg', linkedin: 'https://www.instagram.com/the_car_.spa/' },
+  { name: 'Drosten Fernandes', role: 'Proprietor', img: '/founder2.jpg', linkedin: 'https://www.instagram.com/the_car_.spa/' },
 ];
 
 const gallery = [
@@ -132,7 +132,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-4">About Us</h2>
           <p className="text-base sm:text-lg text-gray-300 mb-4">
-            The Car Spa is Belgaum's most trusted car care destination. With years of experience, a passion for automobiles, and a commitment to excellence, we offer a full range of detailing, cleaning, and protection services for cars and bikes. Our mission is to deliver showroom shine and lasting protection, every time.
+            The Car Spa is Belgaum's most trusted car care destination. With years of experience, a passion for automobiles and a commitment to excellence, we offer a full range of detailing, cleaning, and protection services for cars and bikes. Our mission is to deliver showroom shine and lasting protection, every time.
           </p>
         </div>
       </section>
@@ -196,7 +196,6 @@ export default function Home() {
             <div className="flex overflow-x-auto space-x-6 pb-2 scrollbar-hide">
               {reviews.map((r, i) => (
                 <div key={i} className="flex-shrink-0 bg-gray-800 rounded-2xl p-6 min-w-[260px] max-w-xs shadow-xl border border-yellow-400 flex flex-col items-center">
-                  <img src={r.avatar} alt={r.name} className="w-14 h-14 rounded-full object-cover mb-2 border-2 border-green-400" />
                   <div className="flex items-center mb-1">
                     {[...Array(r.rating)].map((_, idx) => (
                       <span key={idx} className="text-yellow-400 text-lg">★</span>

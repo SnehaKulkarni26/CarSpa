@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PaymentInstructions from './PaymentInstructions';
 
 const SERVICES = [
+  'Washing',
   'Detailing',
   'Interior Cleaning',
   'Car & Bike Polish',
@@ -12,7 +13,6 @@ const SERVICES = [
   'Scratch Removal',
   'Dent Removal & Paint',
   'Accessories Installation',
-  'Other',
 ];
 
 const CAR_TYPES = [
@@ -27,7 +27,7 @@ const CAR_TYPES = [
 const PAYMENT_METHODS = [
   { value: 'gpay', label: 'Google Pay', icon: '💳' },
   { value: 'phonepe', label: 'PhonePe', icon: '📱' },
-  { value: 'cash', label: 'Cash Payment', icon: '💵' },
+
 ];
 
 const BookingForm = ({ onBooked }) => {
@@ -222,7 +222,7 @@ const BookingForm = ({ onBooked }) => {
               </label>
               <div className="bg-gray-800 p-3 rounded border border-yellow-400">
                 <p className="text-yellow-400 font-bold text-center">
-                  {form.paymentMethod === 'gpay' ? 'carspa@gpay' : 'carspa@phonepe'}
+                  {form.paymentMethod === 'gpay' ? 'abhayrevenkarbgm-1@okhdfcbank' : 'abhay.revenkar@ybl'}
                 </p>
                 <p className="text-gray-400 text-sm text-center mt-1">
                   Please send payment to this UPI ID
@@ -271,16 +271,7 @@ const BookingForm = ({ onBooked }) => {
           />
         )}
 
-        {form.paymentMethod === 'cash' && (
-          <div className="bg-gray-800 p-3 rounded border border-green-400">
-            <p className="text-green-400 font-bold text-center">
-              Cash Payment
-            </p>
-            <p className="text-gray-400 text-sm text-center mt-1">
-              Payment will be collected at the time of service
-            </p>
-          </div>
-        )}
+        
 
         <button
           type="submit"
@@ -296,7 +287,7 @@ const BookingForm = ({ onBooked }) => {
       
       <div className="mt-6 text-gray-400 text-sm">
         <p className="text-center">
-          <strong>Shop Hours:</strong> 9:00 AM - 7:00 PM
+          <strong>Shop Hours:</strong> 8:00 AM - 8:00 PM
         </p>
         <p className="text-center mt-2">
           For digital payments, please ensure you have the payment screenshot ready.

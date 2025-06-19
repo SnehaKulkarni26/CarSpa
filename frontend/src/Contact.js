@@ -39,7 +39,7 @@ const Contact = () => {
                 </div>
                 <div className="ml-3">
                   <p className="text-sm font-medium text-white">Email</p>
-                  <p className="text-sm text-gray-300">info@carspa.com</p>
+                  <p className="text-sm text-gray-300">thecarspa2022@gmail.com</p>
                 </div>
               </div>
 
@@ -82,9 +82,7 @@ const Contact = () => {
                 <div className="bg-gray-800 rounded-lg p-3">
                   <span className="text-sm font-medium text-white">PhonePe</span>
                 </div>
-                <div className="bg-gray-800 rounded-lg p-3">
-                  <span className="text-sm font-medium text-white">Cash</span>
-                </div>
+                
               </div>
             </div>
           </div>

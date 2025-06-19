@@ -5,7 +5,7 @@ const PaymentInstructions = ({ paymentMethod, onClose }) => {
 
   const paymentDetails = {
     gpay: {
-      upiId: 'carspa@gpay',
+      upiId: 'abhayrevenkarbgm-1@okhdfcbank',
       name: 'Google Pay',
       icon: '💳',
       color: 'bg-blue-500',
@@ -20,7 +20,7 @@ const PaymentInstructions = ({ paymentMethod, onClose }) => {
       ]
     },
     phonepe: {
-      upiId: 'carspa@phonepe',
+      upiId: 'abhay.revenkar@ybl',
       name: 'PhonePe',
       icon: '📱',
       color: 'bg-purple-500',

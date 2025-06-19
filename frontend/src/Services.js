@@ -6,33 +6,33 @@ const Services = () => {
       name: 'Body Wash',
       description: 'Exterior cleaning and washing of your vehicle',
       prices: {
-        'Hatchback': '₹299',
-        'Sedan': '₹399',
-        'Compact SUV': '₹499',
-        'SUV': '₹599',
-        '7 Seater': '₹699'
+        'Hatchback': '₹250',
+        'Sedan': '₹250',
+        'Compact SUV': '₹250',
+        'SUV': '₹350',
+        '7 Seater': '₹350'
       }
     },
     {
       name: 'Full Wash',
       description: 'Complete interior and exterior cleaning',
       prices: {
-        'Hatchback': '₹599',
-        'Sedan': '₹799',
-        'Compact SUV': '₹999',
-        'SUV': '₹1199',
-        '7 Seater': '₹1399'
+        'Hatchback': '₹350',
+        'Sedan': '₹400',
+        'Compact SUV': '₹400',
+        'SUV': '₹500',
+        '7 Seater': '₹500'
       }
     },
     {
       name: 'Premium Wash',
       description: 'Premium detailing with waxing and polishing',
       prices: {
-        'Hatchback': '₹999',
-        'Sedan': '₹1299',
-        'Compact SUV': '₹1499',
-        'SUV': '₹1799',
-        '7 Seater': '₹1999'
+        'Hatchback': '₹500',
+        'Sedan': '₹550',
+        'Compact SUV': '₹550',
+        'SUV': '₹650',
+        '7 Seater': '₹650'
       }
     }
   ];
@@ -40,7 +40,7 @@ const Services = () => {
   const additionalServices = [
     {
       name: 'INTERIOR CLEANING',
-      description: 'Deep cleaning of car interior including seats, dashboard, and carpets'
+      description: 'Deep cleaning of car interior including seats, dashboard, carpets, etc.'
     },
     {
       name: 'CAR & BIKE POLISH',
@@ -52,7 +52,7 @@ const Services = () => {
     },
     {
       name: 'CERAMIC COATING',
-      description: 'Long-lasting protective ceramic coating for your vehicle'
+      description: 'Long-lasting protective ceramic coating for your vehicle which protects your vehicle from dust, UV rays, tree gum etc.'
     },
     {
       name: 'TEFLON COATING',
@@ -60,7 +60,7 @@ const Services = () => {
     },
     {
       name: 'PAINT PROTECTION FILM (PPF)',
-      description: 'Transparent protective film for paint protection'
+      description: 'Transparent protective film for paint protection which protects your vehicle from minor scratches, UV rays, tree gum etc.'
     },
     {
       name: 'SCRATCH REMOVAL',

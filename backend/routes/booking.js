@@ -7,6 +7,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 const router = express.Router();
+const expressJson = express.json();
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -147,7 +148,7 @@ router.get('/all', auth, async (req, res) => {
 });
 
 // Admin: update booking status (confirm, complete, cancel)
-router.patch('/:id/status', auth, async (req, res) => {
+router.patch('/:id/status', auth, expressJson, async (req, res) => {
   if (!req.user.isAdmin) return res.status(403).json({ message: 'Forbidden' });
   const { status } = req.body;
   if (!['confirmed', 'completed', 'cancelled'].includes(status)) {

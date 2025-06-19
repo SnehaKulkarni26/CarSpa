@@ -114,7 +114,16 @@ const BookingForm = ({ onBooked }) => {
         body: formData,
       });
 
-      const data = await res.json();
+      const text = await res.text();
+      console.log('Booking API raw response:', text);
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        setError('Unexpected server response. Please try again later.');
+        setLoading(false);
+        return;
+      }
       if (res.ok) {
         setMessage('Booking successful! We will confirm your appointment soon.');
         setForm({ 

@@ -133,8 +133,11 @@ const AdminPanel = ({ user }) => {
                     <tbody>
                       {filtered.map((b) => (
                         <tr key={b.id || b._id} className="border-b border-gray-800">
-                          <td className="py-2">{b.user?.name}</td>
-                          <td>{b.user?.email}</td>
+                          <td className="py-2 font-bold text-green-300 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            {b.user?.name || <span className="text-gray-400">Unknown</span>}
+                          </td>
+                          <td className="font-bold text-yellow-300">{b.user?.email || <span className="text-gray-400">Unknown</span>}</td>
                           <td>{b.service}</td>
                           <td>{b.carType}</td>
                           <td>{b.date}</td>

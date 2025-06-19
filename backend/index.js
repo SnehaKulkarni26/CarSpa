@@ -16,7 +16,11 @@ const app = express();
 const server = http.createServer(app); // Create HTTP server
 const io = new Server(server, { // Initialize Socket.IO server
   cors: {
-    origin: ['http://localhost:3000', 'http://localhost:3001'], // Allow connections from your React frontend (both 3000 and 3001)
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      'https://thecarspa-1.onrender.com'
+    ], // Allow connections from your React frontend (local and deployed)
     methods: ['GET', 'POST'],
     credentials: true, // Allow cookies/auth headers
   },
@@ -24,7 +28,14 @@ const io = new Server(server, { // Initialize Socket.IO server
 
 const PORT = process.env.PORT || 5002;
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://thecarspa-1.onrender.com'
+  ],
+  credentials: true
+}));
 
 // Sync database and create tables
 sequelize.sync({ alter: true }).then(() => {

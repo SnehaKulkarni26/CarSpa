@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AdminReviews from './AdminReviews';
+import { apiFetch, API_BASE_URL } from './api';
 
 const STATUS_OPTIONS = ['pending', 'confirmed', 'completed', 'cancelled'];
 
@@ -16,7 +17,7 @@ const AdminPanel = ({ user }) => {
     setError('');
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/booking/all', {
+      const res = await apiFetch('/api/booking/all', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -39,7 +40,7 @@ const AdminPanel = ({ user }) => {
     setUpdateError('');
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`/api/booking/${id}/status`, {
+      const res = await apiFetch(`/api/booking/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -158,7 +159,7 @@ const AdminPanel = ({ user }) => {
                               )}
                               {b.paymentScreenshot && (
                                 <a 
-                                  href={`http://localhost:5002/api/booking${b.paymentScreenshot}`}
+                                  href={`${API_BASE_URL}/api/booking${b.paymentScreenshot}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="text-blue-400 hover:text-blue-300 text-xs underline"
@@ -168,7 +169,7 @@ const AdminPanel = ({ user }) => {
                               )}
                               {b.photoUrl && (
                                 <a 
-                                  href={`http://localhost:5002/api/booking${b.photoUrl}`}
+                                  href={`${API_BASE_URL}/api/booking${b.photoUrl}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="text-green-400 hover:text-green-300 text-xs underline block"

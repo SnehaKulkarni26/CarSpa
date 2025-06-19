@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 import { jwtDecode } from 'jwt-decode';
+import { SOCKET_IO_URL } from './api';
 
 const Chat = ({ user }) => {
   const [socket, setSocket] = useState(null);
@@ -12,7 +13,7 @@ const Chat = ({ user }) => {
     if (!user) return; // Only connect if user is logged in
 
     // Establish Socket.IO connection
-    const newSocket = io('http://localhost:5002', {
+    const newSocket = io(SOCKET_IO_URL, {
         auth: { token: localStorage.getItem('token') } // Pass token for authentication
     }); 
     setSocket(newSocket);

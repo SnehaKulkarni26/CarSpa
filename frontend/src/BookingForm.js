@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PaymentInstructions from './PaymentInstructions';
+import { apiFetch } from './api';
 
 const SERVICES = [
   'Washing',
@@ -105,7 +106,7 @@ const BookingForm = ({ onBooked }) => {
         formData.append('paymentScreenshot', form.paymentScreenshot);
       }
 
-      const res = await fetch('/api/booking', {
+      const res = await apiFetch('/api/booking', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

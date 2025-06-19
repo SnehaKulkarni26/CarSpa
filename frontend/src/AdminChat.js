@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 import { jwtDecode } from 'jwt-decode';
+import { SOCKET_IO_URL } from './api';
 
 const AdminChat = ({ user }) => {
   const [socket, setSocket] = useState(null);
@@ -16,7 +17,7 @@ const AdminChat = ({ user }) => {
   useEffect(() => {
     if (!user || !user.isAdmin) return; // Only connect if admin is logged in
 
-    const newSocket = io('http://localhost:5002', {
+    const newSocket = io(SOCKET_IO_URL, {
       auth: { token: localStorage.getItem('token') },
     });
     setSocket(newSocket);

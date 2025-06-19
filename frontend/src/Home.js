@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiFetch } from './api';
 
 const coreValues = [
   { icon: '🚗', title: 'Quality', desc: 'We use the best products and techniques for every vehicle.' },
@@ -43,7 +44,7 @@ export default function Home() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('http://localhost:5002/api/reviews/approved');
+        const response = await apiFetch('/api/reviews/approved');
         if (response.ok) {
           const data = await response.json();
           if (data.length > 0) {
@@ -74,7 +75,7 @@ export default function Home() {
     setSubmitLoading(true);
     
     try {
-      const response = await fetch('http://localhost:5002/api/reviews/submit', {
+      const response = await apiFetch('/api/reviews/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

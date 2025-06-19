@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { apiFetch } from './api';
 
 const BookingHistory = () => {
   const [bookings, setBookings] = useState([]);
@@ -13,7 +14,7 @@ const BookingHistory = () => {
     setError('');
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/booking/my', {
+      const res = await apiFetch('/api/booking/my', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -48,7 +49,7 @@ const BookingHistory = () => {
     }
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`/api/booking/${id}/cancel`, {
+      const res = await apiFetch(`/api/booking/${id}/cancel`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

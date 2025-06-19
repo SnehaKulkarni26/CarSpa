@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiFetch } from './api';
 
 export default function AdminReviews() {
   const [reviews, setReviews] = useState([]);
@@ -11,7 +12,7 @@ export default function AdminReviews() {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch('http://localhost:5002/api/reviews/all');
+      const response = await apiFetch('/api/reviews/all');
       if (response.ok) {
         const data = await response.json();
         setReviews(data);
@@ -26,7 +27,7 @@ export default function AdminReviews() {
   const handleApprove = async (reviewId, isApproved) => {
     setUpdating(reviewId);
     try {
-      const response = await fetch(`http://localhost:5002/api/reviews/${reviewId}/approve`, {
+      const response = await apiFetch(`/api/reviews/${reviewId}/approve`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -60,7 +61,7 @@ export default function AdminReviews() {
 
     setUpdating(reviewId);
     try {
-      const response = await fetch(`http://localhost:5002/api/reviews/${reviewId}`, {
+      const response = await apiFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE',
       });
 

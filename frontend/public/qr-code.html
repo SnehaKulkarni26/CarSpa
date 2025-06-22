@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code for The Car Spa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .qr-code {
+            margin: 30px 0;
+        }
+        .qr-code img {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            max-width: 300px;
+            height: auto;
+        }
+        .download-btn {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-btn:hover {
+            background: #0056b3;
+        }
+        .info {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        .url {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code for The Car Spa</h1>
+        <p>Scan this QR code to visit our website</p>
+        
+        <div class="url">
+            https://carspa-theta.vercel.app
+        </div>
+        
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://carspa-theta.vercel.app" 
+                 alt="QR Code for The Car Spa" 
+                 id="qrImage">
+        </div>
+        
+        <div>
+            <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://carspa-theta.vercel.app&download=1" 
+               class="download-btn" download="car-spa-qr-code.png">
+                Download QR Code
+            </a>
+            
+            <a href="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https://carspa-theta.vercel.app&download=1" 
+               class="download-btn" download="car-spa-qr-code-large.png">
+                Download Large QR Code
+            </a>
+        </div>
+        
+        <div class="info">
+            <p><strong>How to use this QR code:</strong></p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Print it and display it at your car spa location</li>
+                <li>Add it to your business cards</li>
+                <li>Include it in your marketing materials</li>
+                <li>Share it on social media</li>
+                <li>Customers can scan it with their phone camera to visit your website</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 

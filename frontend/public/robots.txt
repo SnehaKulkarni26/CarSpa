@@ -1,2 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://carspa-theta.vercel.app/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /admin
+Disallow: /api

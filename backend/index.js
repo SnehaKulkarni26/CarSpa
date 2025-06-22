@@ -19,7 +19,8 @@ const io = new Server(server, { // Initialize Socket.IO server
     origin: [
       'http://localhost:3000',
       'http://localhost:3001',
-      'https://carspa-theta.vercel.app/' // Replace with your actual Vercel URL
+      'https://thecarspa-1.onrender.com',
+      'https://carspa-theta.vercel.app'
     ], // Allow connections from your React frontend (local and deployed)
     methods: ['GET', 'POST'],
     credentials: true, // Allow cookies/auth headers
@@ -32,8 +33,8 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://carspa-theta.vercel.app/',
-    // TODO: Replace with your actual Vercel URL (e.g., 'https://car-spa.vercel.app')
+    'https://thecarspa-1.onrender.com',
+    'https://carspa-theta.vercel.app'
   ],
   credentials: true
 }));
